@@ -172,8 +172,6 @@ events.on('contacts: submit', () => {
     .then(() => {
         const success = new Success(cloneTemplate(successTemplate), {
             onClick: () => {
-                appData.clearBasket();
-                order.payment = '';
                 modal.close();
             }
         });
@@ -182,6 +180,8 @@ events.on('contacts: submit', () => {
                 total: appData.order.total
             })
         });
+        appData.clearBasket();
+        order.payment = '';
     })
     .catch((err) => console.error(err));
 }

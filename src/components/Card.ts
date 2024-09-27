@@ -1,3 +1,4 @@
+import { categoryChange } from "../utils/constants";
 import { ensureElement } from "../utils/utils";
 import { Component } from "./base/Components";
 
@@ -54,7 +55,8 @@ export class Card extends Component<ICard> {
     }
 
     set category(value: string) {
-        this.setText(this._category, value)
+        this.setText(this._category, value);
+        this._category.className = `card__category ${categoryChange[value]}`;
     }
 
     set price(value: number) {
@@ -90,7 +92,7 @@ export class CardPreview extends Card {
     }
 
     setButtonText(value: string) {
-        this._button.textContent = value
+        this._button.textContent = value;
     }
 }
 

@@ -9,7 +9,7 @@ export abstract class Model<T>{
     }
 
     //Сообщить всем что модель поменялась
-    emitChanges(event: string, payload?: object) {
+    emitChanges(event: string, payload: object) {
         this.events.emit(event, payload ?? {});
     }
 } 

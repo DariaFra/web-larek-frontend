@@ -71,7 +71,7 @@ events.on('card: selected', (item: IProduct) => {
     appData.setPreview(item);
 });
 
-//Изменение карточки товарба, добавление в корзину
+//Изменение карточки товара, добавление в корзину
 events.on('preview: changed', (item: IProduct) => {  
     
     const card = new CardPreview(cloneTemplate(cardPreviewTemplate), {

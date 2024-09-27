@@ -80,7 +80,7 @@ export class AppState extends Model<IAppState> {
 
     clearBasket() {
        this.order = Object.assign({}, orderDefault, { items: []});
-        this.emitChanges('basket: change') 
+        this.emitChanges('basket: change', {}) 
     }
 
     isItemAdded(item: IProduct) {
